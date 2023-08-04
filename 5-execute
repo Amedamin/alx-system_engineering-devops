@@ -1,5 +1,6 @@
 <<<<<<< HEAD
-readme file
+#!/bin/bash
 =======
-Shell Permission
+#!/bin/bash 
 >>>>>>> Shell Permission
+chmod u+x hello
