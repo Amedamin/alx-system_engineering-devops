@@ -1,16 +1,1 @@
-q
-q<<<<<t
- HEt
-:q
-:wq
-A
-<<<<<<< HEAD
-readme file
-=======
-Shell Permission
->>>>>>> Shell Permission
-=======
-# alx-system_engineering-devops
-my repository 
-repository
->>>>>>> db172d0e9398ec970745df148ff9907ef2d383f6
+h
