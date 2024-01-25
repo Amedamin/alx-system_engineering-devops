@@ -5,5 +5,5 @@ A=0
 while [ $A -lt 10 ] 
 do
     echo "Best School"
-    A++
+    (A++);
 done
