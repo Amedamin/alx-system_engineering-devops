@@ -1,16 +1,16 @@
 #!/usr/bin/env bash 
-#4 bad luck, 8 is your chance 
-count=0 
-while [ $count -le 10 ] 
+#A Bash script that loops from 1 to 10 and:displays bad luck for the 4th loop iteration,displays good luck for the 8th loop iteration,displays Best School for the other iterations
+A=0 
+while [ $A -le 9 ] 
 do 
-    if [ $count -eq 3 ] 
+    if [ $A -eq 3 ] 
     then 
         echo "bad luck" 
-    elif [ $count -eq 7 ] 
+    elif [ $A -eq 7 ] 
     then 
         echo "good luck" 
     else 
         echo "Best School" 
     fi 
-    ((count+1)) 
+    ((A++)) 
 done
