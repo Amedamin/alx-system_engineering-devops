@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-#a Bash script that displays Best School 10 times using untill
-m=10
-until [ $m -lt 1 ]
+#displays Best School 10 times by using until loop.
+A=10
+until [ $A -lt 1 ]
 do
     echo "Best School"
-    ((m--))
+    ((A--))
 done
