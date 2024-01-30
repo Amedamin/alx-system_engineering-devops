@@ -1,2 +1,3 @@
 #!/usr/bin/env ruby 
- puts ARGV[0].scan(/hbt{1,}n/).join
+#This script will search for specfic string which is hbtn and multiple of t character
+puts ARGV[0].scan(/hbt+n/).join
