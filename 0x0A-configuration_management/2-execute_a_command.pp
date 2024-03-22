@@ -1,6 +1,6 @@
 # exec resource to kill the process "killmenow"
 
-exec { 'killmenow':
-  command     => 'pkill -f killmenow',
+exec { 'Killmenow':
+  command  => 'pkill killmenow',
   provider => 'shell'
 }
