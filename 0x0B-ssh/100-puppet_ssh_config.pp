@@ -1,16 +1,13 @@
-# Puppet manifest to configure SSH client using Augeas
+#!/usr/bin/env bash
+# Puppet script to create ssh config file 
+ file_line { 'Turn off passwd auth': 
+   ensure => 'present', 
+   path   => '/etc/ssh/ssh_config', 
+   line   => '    PasswordAuthentication no', 
+ } 
 
-# Install Augeas if not already installed
-package { 'augeas':
-  ensure => installed,
-}
-
-# Configure SSH client using Augeas
-augeas { 'ssh_config':
-  context => '/files/etc/ssh/ssh_config',
-  changes => [
-    'set Host/* IdentityFile ~/.ssh/school',
-    'set Host/* PasswordAuthentication no',
-  ],
-  require => Package['augeas'],
-}
+ file_line { 'Declare identity file': 
+   ensure => 'present', 
+   path   => '/etc/ssh/ssh_config', 
+   line   => '    IdentityFile ~/.ssh/school', 
+ }
