@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
-# Puppet manifest to configure SSH client
+# This is Client configuration file (w/ Puppet)
 
-file_line { 'Turn off passwd auth':
-  path   => '/etc/ssh/ssh_config',
-  line   => 'PasswordAuthentication no',
-  match  => '^#?\s*PasswordAuthentication',
-  ensure => present,
-}
-
-file_line { 'Declare identity file':
-  path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/school',
-  match  => '^#?\s*IdentityFile',
-  ensure => present,
+file { '/etc/ssh/ssh_config':
+  ensure  => present,
+content => "
+    # SSH client configuration
+    Host *
+      IdentityFile ~/.ssh/school
+      PasswordAuthentication no
+  ",
 }
