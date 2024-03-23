@@ -1,12 +1,16 @@
-#!/usr/bin/env bash
-# This is Client configuration file (w/ Puppet)
+# Puppet manifest to configure SSH client using Augeas
 
-file { '/etc/ssh/ssh_config':
-  ensure  => present,
-content => "
-    # SSH client configuration
-    Host *
-      IdentityFile ~/.ssh/school
-      PasswordAuthentication no
-  ",
+# Install Augeas if not already installed
+package { 'augeas':
+  ensure => installed,
+}
+
+# Configure SSH client using Augeas
+augeas { 'ssh_config':
+  context => '/files/etc/ssh/ssh_config',
+  changes => [
+    'set Host/* IdentityFile ~/.ssh/school',
+    'set Host/* PasswordAuthentication no',
+  ],
+  require => Package['augeas'],
 }
